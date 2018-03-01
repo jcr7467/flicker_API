@@ -2,8 +2,7 @@ $(document).ready(function() {
   
   
     
- var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-
+ var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 
  $('form').submit(function (evt) {
     var $submitButton = $('#submit');
@@ -32,7 +31,5 @@ $(document).ready(function() {
       $searchField.prop("disabled", false);
       $submitButton.attr("disabled", false).val("Search");
     }); // end getJSON
-
   }); // end click
-
 }); // end ready
