@@ -10,10 +10,10 @@ $(document).ready(function() {
     evt.preventDefault();
     $searchField.prop("disabled",true);
     $submitButton.attr("disabled", true).val("searching....");
-    var animal = $searchField.val();
+    var searchTerm = $searchField.val();
     $('#photos').html('');
     $.getJSON(flickerAPI, {
-        tags: animal,
+        tags: searchTerm,
         format: "json"
       },
     function(data){
@@ -25,7 +25,7 @@ $(document).ready(function() {
           photoHTML += '<img src="' + photo.media.m + '"></a></li>';
         }); // end each
       } else {
-        photoHTML = "<p>No photos found that match: " + animal + ".</p>"
+        photoHTML = "<p>No photos found that match: " + searchTerm + ".</p>"
       }
       $('#photos').html(photoHTML);
       $searchField.prop("disabled", false);
